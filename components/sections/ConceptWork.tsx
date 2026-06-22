@@ -685,7 +685,7 @@ function WorkCard({ item }: { item: WorkItem }) {
         <h2 className="min-w-0 font-display text-[24px] leading-[1.1] tracking-[-0.02em] text-black md:text-[28px] lg:text-[32px]" style={displayStyle}>
           {item.title}
         </h2>
-        {item.title === 'song of songs' ? null : <DetailsButton />}
+        <DetailsButton />
       </div>
     </article>
   );
