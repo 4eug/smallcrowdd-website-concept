@@ -299,7 +299,7 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[1384px] lg:max-w-[calc(100%-56px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-56px)]"
       />
 
       <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-10 md:text-[20px] lg:px-16">
