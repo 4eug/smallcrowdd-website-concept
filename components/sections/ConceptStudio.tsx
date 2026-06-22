@@ -141,7 +141,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
 
   return (
     <>
-      <header className="sticky left-0 top-0 z-30 flex w-full items-center justify-between bg-white px-6 py-4 text-black lg:px-16 lg:py-6">
+      <header className="sticky left-0 top-0 z-30 flex w-full items-center justify-between bg-white px-4 py-4 text-black md:px-16 lg:px-24 lg:py-6">
         <Link href="/" aria-label="smallcrowdd home" onClick={() => handleInternalNavigation('/')} className="relative block h-5 w-10 lg:h-8 lg:w-16">
           <Image src="/assets/logos/smallcrowdd-mini.svg" alt="smallcrowdd." fill priority className="object-fill" />
         </Link>
@@ -154,7 +154,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           drawerOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'
         }`}
       >
-        <div className="flex w-full items-center justify-between p-4 lg:px-16 lg:py-6">
+        <div className="flex w-full items-center justify-between p-4 lg:px-24 lg:py-6">
           <Link
             href="/"
             aria-label="smallcrowdd home"
@@ -166,7 +166,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           <MenuIconButton label="Close menu" iconSrc="/assets/figma-home/menu-close.svg" onClick={() => setDrawerOpen(false)} tone="light" />
         </div>
 
-        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-[156px] lg:py-14">
+        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-24 lg:py-14">
           <nav
             aria-label="Main menu"
             className="flex w-full flex-col items-start gap-3 font-display text-[56px] leading-[1.1] tracking-[-1.12px] lg:w-auto lg:text-[120px] lg:tracking-[-2.4px]"
@@ -200,7 +200,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
+        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-24 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
           <p>
             Always open for new <br />
             projects and collaborations
@@ -254,10 +254,10 @@ function LogoGrid({ items, variant }: { items: LogoItem[]; variant: 'awards' | '
 
 function Footer() {
   return (
-    <footer className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
+    <footer className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[655px]">
+      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] lg:h-[420px] md:flex-row md:justify-between md:gap-5 md:px-16 md:pb-20 md:pt-16 lg:px-24 lg:pb-24 lg:pt-24">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-        <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+        <div className="relative flex w-full items-start gap-2.5 md:min-h-[180px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5 lg:min-h-[254px]">
           <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
             <p className="text-[#999]">
               Let&apos;s Create <br className="md:hidden" />
@@ -299,10 +299,10 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-56px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] lg:top-[389px] md:mx-0 md:mt-0 md:w-[calc(100%-128px)] md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-192px)]"
       />
 
-      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-10 md:text-[20px] lg:px-16">
+      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-16 md:text-[20px] lg:px-24">
         <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
         <a href="#" className="hidden">
           Privacy policy
@@ -322,7 +322,7 @@ export function ConceptStudio() {
     <main className="min-h-screen bg-white text-black">
       <Header drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
 
-      <section className="flex w-full flex-col gap-5 overflow-hidden bg-white px-4 pb-16 pt-6 md:gap-12 md:px-16 md:pt-16">
+      <section className="flex w-full flex-col gap-5 overflow-hidden bg-white px-4 pb-16 pt-6 md:gap-12 md:px-16 md:pt-16 lg:px-24">
         <div className="flex w-full max-w-[1080px] flex-col gap-5 md:gap-8">
           <div className="flex flex-col gap-8 font-display text-[32px] leading-[1.04] tracking-[-0.01em] text-black md:text-[48px]" style={displayStyle}>
             <p>

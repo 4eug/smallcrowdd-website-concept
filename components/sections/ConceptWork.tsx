@@ -32,7 +32,6 @@ type WorkItem = {
   src: string | string[];
   alt: string;
   widthClass: string;
-  priority?: boolean;
 };
 
 type HeroSlide = {
@@ -58,38 +57,38 @@ const heroSlides: HeroSlide[] = [
     title: 'pink memory',
     category: 'Portrait Film',
     description: 'a still portrait built from color, quiet confidence, and remembered space.',
-    image: '/assets/work/figma-35830616/card-01.png',
-    thumb: '/assets/work/figma-35830616/card-01.png',
+    image: '/assets/optimized/work/card-01.webp',
+    thumb: '/assets/optimized/work/card-01.webp',
     objectPosition: '50% 35%',
   },
   {
     title: 'weakness',
     category: 'Narrative Short',
     description: 'a boxing-ring fragment about inner conflict, courage, and balance.',
-    image: '/assets/work/figma-35830616/card-02.png',
-    thumb: '/assets/work/figma-35830616/card-02.png',
+    image: '/assets/optimized/work/card-02.webp',
+    thumb: '/assets/optimized/work/card-02.webp',
   },
   {
     title: 'king ketelby james',
     category: 'Portrait Film',
     description: 'a warm portrait built around gesture, ease, and the confidence of presence.',
-    image: '/assets/work/figma-35830616/card-03.png',
-    thumb: '/assets/work/figma-35830616/card-03.png',
+    image: '/assets/optimized/work/card-03.webp',
+    thumb: '/assets/optimized/work/card-03.webp',
   },
   {
     title: 'free the youth',
     category: 'Cultural Story',
     description: 'a window into place, texture, and the quiet charge of contemporary identity.',
-    image: '/assets/work/figma-35830616/card-04.png',
-    thumb: '/assets/work/figma-35830616/card-04.png',
+    image: '/assets/optimized/work/card-04.webp',
+    thumb: '/assets/optimized/work/card-04.webp',
     objectPosition: '42% 50%',
   },
   {
     title: 'vim campaign',
     category: 'Brand Film',
     description: 'a close study of youth, pause, and character inside a moving campaign world.',
-    image: '/assets/work/figma-35830616/card-05.png',
-    thumb: '/assets/work/figma-35830616/card-05.png',
+    image: '/assets/optimized/work/card-05.webp',
+    thumb: '/assets/optimized/work/card-05.webp',
     objectPosition: '58% 50%',
   },
   {
@@ -112,15 +111,15 @@ const heroSlides: HeroSlide[] = [
     title: 'flo remembers landscape',
     category: 'Narrative Short',
     description: 'a wide memory held in color, distance, and a slow unfolding frame.',
-    image: '/assets/work/figma-35830616/card-08.png',
-    thumb: '/assets/work/figma-35830616/card-08.png',
+    image: '/assets/optimized/work/card-08.webp',
+    thumb: '/assets/optimized/work/card-08.webp',
   },
   {
     title: 'ever young street',
     category: 'Campaign Film',
     description: 'a bright street image about youth, confidence, and kinetic style.',
-    image: '/assets/images/Hero/six.jpg',
-    thumb: '/assets/images/Hero/six.jpg',
+    image: '/assets/optimized/hero/six.webp',
+    thumb: '/assets/optimized/hero/six.webp',
   },
   {
     title: 'afro futurist',
@@ -182,8 +181,8 @@ const heroSlides: HeroSlide[] = [
     title: 'almost joy',
     category: 'Visual Test',
     description: 'a soft experiment in expression, color, and the memory of joy.',
-    image: '/assets/figma-home/testTwo.png',
-    thumb: '/assets/figma-home/testTwo.png',
+    image: '/assets/optimized/figma-home/testTwo.webp',
+    thumb: '/assets/optimized/figma-home/testTwo.webp',
   },
   {
     title: 'one big wave',
@@ -210,88 +209,79 @@ const heroSlides: HeroSlide[] = [
     title: 'waterfall memory',
     category: 'Archive Image',
     description: 'a wide natural frame built from falling water, ritual, and atmosphere.',
-    image: '/assets/images/Hero/eight.jpg',
-    thumb: '/assets/images/Hero/eight.jpg',
+    image: '/assets/optimized/hero/eight.webp',
+    thumb: '/assets/optimized/hero/eight.webp',
   },
   {
     title: 'blue hour',
     category: 'Archive Image',
     description: 'a blue-toned frame from the archive, held between pause and motion.',
-    image: '/assets/images/Hero/two.jpg',
-    thumb: '/assets/images/Hero/two.jpg',
+    image: '/assets/optimized/hero/two.webp',
+    thumb: '/assets/optimized/hero/two.webp',
   },
   {
     title: 'sunset ridge',
     category: 'Archive Image',
     description: 'a coastal horizon held in warm light, distance, and open air.',
-    image: '/assets/images/Hero/twelve.jpg',
-    thumb: '/assets/images/Hero/twelve.jpg',
+    image: '/assets/optimized/hero/twelve.webp',
+    thumb: '/assets/optimized/hero/twelve.webp',
   },
 ];
 
 const workItems: WorkItem[] = [
   {
     title: 'flo remembers',
-    src: '/assets/work/figma-35830616/card-01.png',
+    src: '/assets/optimized/work/card-01.webp',
     alt: 'Flo Remembers portrait',
     widthClass: 'lg:col-span-8',
-    priority: true,
   },
   {
     title: 'Weakness',
-    src: ['/assets/work/figma-35830616/card-02-base.png', '/assets/work/figma-35830616/card-02.png'],
+    src: ['/assets/work/figma-35830616/card-02-base.png', '/assets/optimized/work/card-02.webp'],
     alt: 'Weakness boxing portrait',
     widthClass: 'lg:col-span-8',
-    priority: true,
   },
   {
     title: 'king ketelby james',
-    src: '/assets/work/figma-35830616/card-03.png',
+    src: '/assets/optimized/work/card-03.webp',
     alt: 'King Ketelby James portrait',
     widthClass: 'lg:col-span-8',
-    priority: true,
   },
   {
     title: 'free the youth',
-    src: '/assets/work/figma-35830616/card-04.png',
+    src: '/assets/optimized/work/card-04.webp',
     alt: 'Free The Youth portrait',
     widthClass: 'lg:col-span-12',
-    priority: true,
   },
   {
     title: 'vim campaign',
-    src: '/assets/work/figma-35830616/card-05.png',
+    src: '/assets/optimized/work/card-05.webp',
     alt: 'Vim campaign portrait',
     widthClass: 'lg:col-span-12',
-    priority: true,
   },
   {
     title: 'song of songs',
     src: ['/assets/work/figma-35830616/card-06-base.png', '/assets/work/figma-35830616/card-06.png'],
     alt: 'Song of Songs still',
     widthClass: 'lg:col-span-15 lg:w-[817px]',
-    priority: true,
   },
   {
     title: 'idle reverie',
     src: '/assets/work/figma-35830616/card-07.png',
     alt: 'Idle Reverie portrait',
     widthClass: 'lg:col-span-8 lg:col-start-1',
-    priority: true,
   },
   {
     title: 'flo remembers',
-    src: '/assets/work/figma-35830616/card-08.png',
+    src: '/assets/optimized/work/card-08.webp',
     alt: 'Flo Remembers landscape still',
     widthClass: 'lg:col-span-8',
-    priority: true,
   },
   {
     title: 'ever young',
-    src: ['/assets/work/figma-35830616/card-02-base.png', '/assets/work/figma-35830616/card-09.png'],
+    src: ['/assets/work/figma-35830616/card-02-base.png', '/assets/optimized/work/card-09.webp'],
     alt: 'Ever Young motorcycle scene',
     widthClass: 'lg:col-span-8',
-    priority: true,
   },
 ];
 
@@ -367,7 +357,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
 
   return (
     <>
-      <header className="absolute left-0 top-0 z-30 flex w-full items-center justify-between px-4 py-4 sm:px-10 lg:px-16 lg:py-6">
+      <header className="absolute left-0 top-0 z-30 flex w-full items-center justify-between px-4 py-4 sm:px-16 lg:px-24 lg:py-6">
         <Link href="/" aria-label="smallcrowdd home" onClick={() => handleInternalNavigation('/')} className="relative block h-[16px] w-[113px] md:h-[28px] md:w-[198px]">
           <Image src="/assets/work/figma-35830616/wordmark.svg" alt="smallcrowdd." fill priority className="object-fill" />
         </Link>
@@ -380,14 +370,14 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           drawerOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'
         }`}
       >
-        <div className="flex w-full items-center justify-between p-4 lg:px-16 lg:py-6">
+        <div className="flex w-full items-center justify-between p-4 lg:px-24 lg:py-6">
           <Link href="/" aria-label="smallcrowdd home" onClick={() => handleInternalNavigation('/', () => setDrawerOpen(false))} className="relative block h-[16px] w-[113px] md:h-[28px] md:w-[198px]">
             <Image src="/assets/work/figma-35830616/wordmark.svg" alt="smallcrowdd." fill priority className="object-fill invert" />
           </Link>
           <MenuIconButton label="Close menu" iconSrc="/assets/figma-home/menu-close.svg" onClick={() => setDrawerOpen(false)} tone="light" />
         </div>
 
-        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-[156px] lg:py-14">
+        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-24 lg:py-14">
           <nav
             aria-label="Main menu"
             className="flex w-full flex-col items-start gap-3 font-display text-[56px] leading-[1.1] tracking-[-1.12px] lg:w-auto lg:text-[120px] lg:tracking-[-2.4px]"
@@ -421,7 +411,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
+        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-24 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
           <p>
             Always open for new <br />
             projects and collaborations
@@ -463,7 +453,7 @@ function InfoGlyph() {
 
 function HeroContent({ slide }: { slide: HeroSlide }) {
   return (
-    <div className="absolute inset-x-0 bottom-[174px] z-10 px-4 sm:px-10 md:bottom-[172px] lg:bottom-[234px] lg:px-16">
+    <div className="absolute inset-x-0 bottom-[174px] z-10 px-4 sm:px-16 md:bottom-[172px] lg:bottom-[234px] lg:px-24">
       <div className="flex w-full max-w-[440px] flex-col items-start gap-4 md:gap-5">
         <h1 className="font-display text-[32px] leading-none tracking-[-0.01em] text-white md:text-[48px] lg:text-[56px]" style={displayStyle}>
           {slide.title}
@@ -537,7 +527,7 @@ function HeroCarousel({
   };
 
   return (
-    <div className="absolute inset-x-0 bottom-4 z-10 overflow-hidden px-4 sm:px-10 lg:bottom-[62px] lg:px-16">
+    <div className="absolute inset-x-0 bottom-4 z-10 overflow-hidden px-4 sm:px-16 lg:bottom-[62px] lg:px-24">
       <div
         ref={scrollerRef}
         onScroll={() => {
@@ -572,7 +562,7 @@ function HeroCarousel({
             }
           }, 120);
         }}
-        className="-mx-4 flex w-[calc(100%+32px)] touch-pan-x scroll-smooth items-center gap-2 overflow-x-auto overflow-y-hidden px-4 drop-shadow-[0_0_66px_rgba(0,0,0,0.95)] [scrollbar-width:none] sm:-mx-10 sm:w-[calc(100%+80px)] sm:px-10 lg:-mx-16 lg:w-[calc(100%+128px)] lg:px-16 [&::-webkit-scrollbar]:hidden"
+        className="-mx-4 flex w-[calc(100%+32px)] touch-pan-x scroll-smooth items-center gap-2 overflow-x-auto overflow-y-hidden px-4 drop-shadow-[0_0_66px_rgba(0,0,0,0.95)] [scrollbar-width:none] sm:-mx-16 sm:w-[calc(100%+128px)] sm:px-16 lg:-mx-24 lg:w-[calc(100%+192px)] lg:px-24 [&::-webkit-scrollbar]:hidden"
       >
         {heroSlides.map((slide, index) => {
           const selected = activeIndex === index;
@@ -613,18 +603,16 @@ function WorkHero({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawe
 
   return (
     <section className="relative flex h-[714px] w-full flex-col overflow-hidden bg-black text-white md:h-[860px] lg:h-[1000px]">
-      {heroSlides.map((slide, index) => (
-        <Image
-          key={`${slide.image}-${index}`}
-          src={slide.image}
-          alt={`${slide.title} hero still`}
-          fill
-          priority={index < 2}
-          sizes="100vw"
-          className={`object-cover transition-opacity duration-500 ${index === activeIndex ? 'opacity-100' : 'opacity-0'}`}
-          style={{ objectPosition: slide.objectPosition ?? '50% 50%' }}
-        />
-      ))}
+      <Image
+        key={activeSlide.image}
+        src={activeSlide.image}
+        alt={`${activeSlide.title} hero still`}
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+        style={{ objectPosition: activeSlide.objectPosition ?? '50% 50%' }}
+      />
       {activeVideoSrc ? (
         <video
           key={activeVideoSrc}
@@ -634,7 +622,7 @@ function WorkHero({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawe
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={activeSlide.image}
           aria-label={`${activeSlide.title} video`}
           onCanPlay={() => setReadyVideoSrc(activeVideoSrc)}
@@ -677,7 +665,6 @@ function WorkCard({ item }: { item: WorkItem }) {
             fill
             sizes="(min-width: 1024px) 34vw, (min-width: 768px) 50vw, 100vw"
             className="object-cover"
-            priority={item.priority}
           />
         ))}
       </div>
@@ -693,7 +680,7 @@ function WorkCard({ item }: { item: WorkItem }) {
 
 function AllWork() {
   return (
-    <section className="flex w-full flex-col gap-8 overflow-hidden bg-white px-4 pb-16 pt-10 text-black sm:px-10 md:gap-12 lg:px-16">
+    <section className="flex w-full flex-col gap-8 overflow-hidden bg-white px-4 pb-16 pt-10 text-black sm:px-16 md:gap-12 lg:px-24">
       <div className="flex w-full items-center">
         <h2 className="font-display text-[40px] leading-[1.1] tracking-[-0.02em] text-black md:text-[48px]" style={displayStyle}>
           All Work
@@ -710,10 +697,10 @@ function AllWork() {
 
 function Footer() {
   return (
-    <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
+    <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[655px]">
+      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] lg:h-[420px] md:flex-row md:justify-between md:gap-5 md:px-16 md:pb-20 md:pt-16 lg:px-24 lg:pb-24 lg:pt-24">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-        <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+        <div className="relative flex w-full items-start gap-2.5 md:min-h-[180px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5 lg:min-h-[254px]">
           <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
             <p className="text-[#999]">
               Let&apos;s Create <br className="md:hidden" />
@@ -755,10 +742,10 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-56px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] lg:top-[389px] md:mx-0 md:mt-0 md:w-[calc(100%-128px)] md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-192px)]"
       />
 
-      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-10 md:text-[20px] lg:px-16">
+      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-16 md:text-[20px] lg:px-24">
         <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
         <a href="#" className="hidden">
           Privacy policy

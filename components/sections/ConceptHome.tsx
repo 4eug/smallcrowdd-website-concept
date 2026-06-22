@@ -50,7 +50,6 @@ const workCards: WorkCard[] = [
     flex: '715 1 0',
     imageAspectRatio: '715 / 631',
     mobileMediaHeight: '350px',
-    priority: true,
   },
   {
     title: 'afro futurist',
@@ -65,7 +64,6 @@ const workCards: WorkCard[] = [
     imageWidth: 1080,
     imageHeight: 1350,
     mobileMediaHeight: '350px',
-    priority: true,
   },
   {
     title: 'weakness trailer 🥊🎈',
@@ -115,7 +113,7 @@ const workCards: WorkCard[] = [
 
 const testCards = [
   '/assets/figma-home/testSelected.jpg',
-  '/assets/figma-home/testTwo.png',
+  '/assets/optimized/figma-home/testTwo.webp',
   '/assets/figma-home/testThree.jpg',
   '/assets/figma-home/testFour.jpg',
   '/assets/figma-home/testFive.jpg',
@@ -414,7 +412,7 @@ function TestsCarousel() {
       <div
         ref={scrollerRef}
         onScroll={updateFocusFromScroll}
-        className="relative z-10 -mx-4 flex w-[calc(100%+32px)] touch-pan-x items-center gap-[12.396px] overflow-x-auto overflow-y-hidden px-8 [scrollbar-width:none] md:-mx-10 md:w-[calc(100%+80px)] md:gap-8 md:px-10 md:pl-[calc(50vw-240px)] md:pr-[calc(50vw-240px)] lg:-mx-16 lg:w-[calc(100%+128px)] lg:gap-12 lg:px-16 lg:pl-[464px] lg:pr-[464px] [&::-webkit-scrollbar]:hidden"
+        className="relative z-10 -mx-4 flex w-[calc(100%+32px)] touch-pan-x items-center gap-[12.396px] overflow-x-auto overflow-y-hidden px-8 [scrollbar-width:none] md:-mx-16 md:w-[calc(100%+128px)] md:gap-8 md:px-16 md:pl-[calc(50vw-240px)] md:pr-[calc(50vw-240px)] lg:-mx-24 lg:w-[calc(100%+192px)] lg:gap-12 lg:px-24 lg:pl-[464px] lg:pr-[464px] [&::-webkit-scrollbar]:hidden"
       >
         {testCards.map((src, index) => {
           const isActive = activeIndex === index;
@@ -458,7 +456,6 @@ function TestsCarousel() {
                   fill
                   sizes={isActive ? '500px' : '407px'}
                   className="object-cover"
-                  priority={index < 2}
                 />
               </span>
             </button>
@@ -562,7 +559,7 @@ export function ConceptHome() {
   return (
     <>
       <main className="min-h-screen bg-white text-[#131111]">
-      <header className="absolute left-0 top-0 z-30 flex w-full items-center justify-between px-4 py-4 md:px-10 md:py-6 lg:px-16">
+      <header className="absolute left-0 top-0 z-30 flex w-full items-center justify-between px-4 py-4 md:px-16 md:py-6 lg:px-24">
         <Link href="/" aria-label="smallcrowdd home" className="text-[#fef3d9]">
           <Image
             src="/assets/figma-home/heroWordmark.svg"
@@ -583,7 +580,7 @@ export function ConceptHome() {
           drawerOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'
         }`}
       >
-        <div className="flex w-full cursor-pointer items-center justify-between p-4 lg:px-16 lg:py-6">
+        <div className="flex w-full cursor-pointer items-center justify-between p-4 lg:px-24 lg:py-6">
           <Link
             href="/"
             aria-label="smallcrowdd home"
@@ -595,7 +592,7 @@ export function ConceptHome() {
           <MenuIconButton label="Close menu" iconSrc="/assets/figma-home/menu-close.svg" onClick={() => setDrawerOpen(false)} />
         </div>
 
-        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-[156px] lg:py-14">
+        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-24 lg:py-14">
           <nav
             aria-label="Main menu"
             className="flex w-full flex-col items-start gap-3 font-display text-[56px] leading-[1.1] tracking-[-1.12px] lg:w-auto lg:text-[120px] lg:tracking-[-2.4px]"
@@ -620,7 +617,7 @@ export function ConceptHome() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
+        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-24 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
           <p>
             Always open for new <br />
             projects and collaborations
@@ -631,7 +628,7 @@ export function ConceptHome() {
 
       <section className="relative h-[600px] w-full overflow-hidden bg-[#131111] text-[#fef3d9] md:h-dvh md:min-h-[720px]">
         <HeroVideo />
-        <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 flex-col items-center justify-center gap-2.5 px-4 md:left-1/2 md:right-auto md:top-[42.6%] md:w-[min(904px,calc(100%-80px))] md:-translate-x-1/2 md:translate-y-0 md:items-start md:px-0">
+        <div className="absolute left-0 right-0 top-1/2 flex -translate-y-1/2 flex-col items-center justify-center gap-2.5 px-4 md:left-1/2 md:right-auto md:top-[42.6%] md:w-[min(904px,calc(100%-128px))] md:-translate-x-1/2 md:translate-y-0 md:items-start md:px-0">
           <p className="w-full text-center text-[20px] font-medium leading-[1.33] tracking-[-0.6px] text-[#fef3d9] md:text-[28px]">
             Crafting impactful stories through art, film, and events.
           </p>
@@ -654,7 +651,7 @@ export function ConceptHome() {
         id="intro-section"
         data-node-id="45:12506"
         aria-labelledby="intro-heading"
-            className="flex w-full flex-col items-stretch gap-5 bg-[#fefdfa] px-4 py-6 text-center text-black md:gap-6 md:px-10 md:py-10 lg:p-16"
+            className="flex w-full flex-col items-stretch gap-5 bg-[#fefdfa] px-4 py-6 text-center text-black md:gap-6 md:px-16 md:py-10 lg:p-24"
       >
         <h1
           id="intro-heading"
@@ -678,7 +675,7 @@ export function ConceptHome() {
       <section id="selected-work" className="w-full bg-[#fefdfa]">
         <div
           data-node-id="39:21728"
-          className="flex w-full flex-col gap-5 bg-[#fefdfa] px-4 py-6 md:gap-8 md:px-10 md:py-10 lg:p-16"
+          className="flex w-full flex-col gap-5 bg-[#fefdfa] px-4 py-6 md:gap-8 md:px-16 md:py-10 lg:p-24"
         >
           <div data-node-id="39:21729" className="flex w-full items-center justify-between whitespace-nowrap">
             <h2
@@ -731,7 +728,7 @@ export function ConceptHome() {
         </div>
       </section>
 
-      <section id="tests-section" className="relative flex h-[348.532px] flex-col gap-12 overflow-hidden bg-[#131111] px-4 pt-6 text-[#f6f6f6] md:h-[610px] md:gap-8 md:px-10 md:py-10 lg:h-[680px] lg:gap-12 lg:px-16 lg:py-16">
+      <section id="tests-section" className="relative flex h-[348.532px] flex-col gap-12 overflow-hidden bg-[#131111] px-4 pt-6 text-[#f6f6f6] md:h-[610px] md:gap-8 md:px-16 md:py-10 lg:h-[680px] lg:gap-12 lg:px-24 lg:py-16">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
         <div className="relative z-10">
           <SectionHeader title="Tests" tone="dark" viewAllHref={testPageHref} />
@@ -739,10 +736,10 @@ export function ConceptHome() {
         <TestsCarousel />
       </section>
 
-      <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-        <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
+      <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[655px]">
+        <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] lg:h-[420px] md:flex-row md:justify-between md:gap-5 md:px-16 md:pb-20 md:pt-16 lg:px-24 lg:pb-24 lg:pt-24">
           <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-          <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+          <div className="relative flex w-full items-start gap-2.5 md:min-h-[180px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5 lg:min-h-[254px]">
             <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
               <p className="text-[#999]">
                 Let’s Create <br className="md:hidden" />
@@ -780,10 +777,10 @@ export function ConceptHome() {
           alt="smallcrowdd."
           width={1384}
           height={196}
-          className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:w-[calc(100%-80px)] md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-56px)]"
+          className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] lg:top-[389px] md:mx-0 md:mt-0 md:w-[calc(100%-128px)] md:-translate-x-1/2 lg:h-[196px] lg:w-[calc(100%-192px)]"
         />
 
-        <div className="relative z-10 mt-3 flex w-full items-center justify-center px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-10 md:text-[18px] lg:px-16 lg:text-[20px]">
+        <div className="relative z-10 mt-3 flex w-full items-center justify-center px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-16 md:text-[18px] lg:px-24 lg:text-[20px]">
           <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
           <a href="#" className="hidden">
             Privacy policy

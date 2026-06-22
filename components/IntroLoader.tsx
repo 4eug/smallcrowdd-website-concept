@@ -31,16 +31,6 @@ const loaderSourceImages = [
   { src: "/assets/figma-home/workFreedom.jpg", width: 1080, height: 720 },
   { src: "/assets/figma-home/workEverYoung.jpg", width: 1080, height: 721 },
   { src: "/assets/figma-home/testSelected.jpg", width: 3840, height: 2160 },
-  { src: "/assets/images/Hero/one.jpg", width: 1440, height: 2160 },
-  { src: "/assets/images/Hero/two.jpg", width: 1440, height: 2160 },
-  { src: "/assets/images/Hero/three.jpg", width: 1440, height: 2160 },
-  { src: "/assets/images/Hero/four.jpg", width: 1440, height: 2160 },
-  { src: "/assets/images/Hero/five.jpg", width: 1440, height: 2160 },
-  { src: "/assets/work/figma-35830616/card-01.png", width: 2624, height: 3936 },
-  { src: "/assets/work/figma-35830616/card-02.png", width: 4082, height: 4082 },
-  { src: "/assets/work/figma-35830616/card-03.png", width: 2804, height: 3496 },
-  { src: "/assets/work/figma-35830616/card-04.png", width: 3226, height: 4096 },
-  { src: "/assets/work/figma-35830616/card-05.png", width: 3276, height: 4096 },
 ];
 
 const loaderLayouts = [
@@ -466,7 +456,7 @@ export function IntroLoader({ onComplete }: IntroLoaderProps) {
               fill
               sizes={image.sizes}
               className="object-cover"
-              priority={index < 6}
+              priority={index < 3}
             />
           </div>
         ))}
