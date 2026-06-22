@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { markIntroBypassedForInternalNavigation } from '../introNavigation';
 
 const navLinks = ['Work', 'About', 'Tests', 'The Rising Times'];
-const socialLinks = ['Phone', 'Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
+const socialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const menuLinks = ['Home', 'Work', 'studio', 'Test', 'the rising times'];
 const menuSocialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const testPageHref = '/test';
@@ -48,24 +48,25 @@ const services = [
 type LogoItem = {
   src: string;
   alt: string;
+  className: string;
 };
 
 const awards: LogoItem[] = [
-  { src: '/assets/studio/award-la-international.svg', alt: 'Winner LA International Art Film Fest 2025' },
-  { src: '/assets/studio/award-cannes.svg', alt: 'Winner Cannes Arts Fest 2025' },
-  { src: '/assets/studio/award-siff.svg', alt: 'Award Winner Siff Film Festival' },
-  { src: '/assets/studio/award-london-global.svg', alt: 'Winner London Global Film Festival' },
-  { src: '/assets/studio/award-aimaff-hm.svg', alt: '2026 AIMAFF Honorable Mention' },
-  { src: '/assets/studio/award-lift-off.svg', alt: 'LIFT-OFF Global Network' },
+  { src: '/assets/studio-figma/award-la-international.png', alt: 'Winner LA International Art Film Fest 2025', className: 'h-[104px] w-[156.632px]' },
+  { src: '/assets/studio-figma/award-cannes.png', alt: 'Winner Cannes Arts Fest 2025', className: 'h-[104px] w-[156.632px]' },
+  { src: '/assets/studio-figma/award-aimaff-hm.png', alt: '2026 AIMAFF Honorable Mention', className: 'h-[104px] w-[163.589px]' },
+  { src: '/assets/studio-figma/award-lift.png', alt: 'LIFT-OFF Global Network', className: 'h-[104px] w-[154.791px]' },
+  { src: '/assets/studio-figma/award-aimaff.png', alt: 'AIMAFF award', className: 'size-[104px]' },
+  { src: '/assets/studio-figma/award-london.png', alt: 'Winner London Global Film Festival', className: 'h-[104px] w-[116.519px]' },
 ];
 
 const clients: LogoItem[] = [
-  { src: '/assets/studio/client-puma.svg', alt: 'Puma' },
-  { src: '/assets/studio/client-adidas.svg', alt: 'Adidas' },
-  { src: '/assets/studio/client-accra-babashop.svg', alt: 'Accra Babashop' },
-  { src: '/assets/studio/client-afrofuture.svg', alt: 'Afro Future' },
-  { src: '/assets/studio/client-gfa.svg', alt: 'GFA' },
-  { src: '/assets/studio/client-luuknow.svg', alt: 'LuukNow' },
+  { src: '/assets/studio-figma/client-puma.svg', alt: 'Puma', className: 'h-[72px] w-[144.607px]' },
+  { src: '/assets/studio-figma/client-adidas.svg', alt: 'Adidas', className: 'h-[72px] w-[107.573px]' },
+  { src: '/assets/studio-figma/client-afrofuture.png', alt: 'Afrofuture', className: 'h-[72px] w-[165.176px]' },
+  { src: '/assets/studio-figma/client-accra.svg', alt: 'Accra Babashop', className: 'h-[72px] w-[108.719px]' },
+  { src: '/assets/studio-figma/client-gfa.jpg', alt: 'Ghana Football Association', className: 'h-[104px] w-[90.734px]' },
+  { src: '/assets/studio-figma/client-luuknow.png', alt: 'Luuknow', className: 'h-[72px] w-[131.294px]' },
 ];
 
 function getPageHref(label: string) {
@@ -224,12 +225,27 @@ function ServiceCard({ title, children }: { title: string; children: ReactNode }
   );
 }
 
-function LogoGrid({ items, padding = 'p-1' }: { items: LogoItem[]; padding?: 'p-1' | 'p-2' }) {
+function LogoGrid({ items, variant }: { items: LogoItem[]; variant: 'awards' | 'clients' }) {
   return (
-    <div className="grid grid-cols-2 gap-1 gap-x-1 gap-y-1 overflow-hidden sm:gap-4 sm:gap-x-6 lg:gap-x-10 lg:gap-y-4">
+    <div
+      className={
+        variant === 'awards'
+          ? 'inline-grid grid-cols-2 gap-x-1 gap-y-1 overflow-hidden sm:grid-cols-3 sm:gap-x-10 sm:gap-y-4'
+          : 'grid w-full max-w-[473.83px] grid-cols-2 gap-x-1 gap-y-1 overflow-hidden sm:gap-x-[16.81px] sm:gap-y-[52.025px] sm:px-[8.405px]'
+      }
+    >
       {items.map((item) => (
-        <div key={item.alt} className={`flex size-[140px] items-center justify-center overflow-hidden ${padding} sm:size-[180px] sm:p-4`}>
-          <Image src={item.src} alt={item.alt} width={180} height={180} className="max-h-full max-w-full object-contain" />
+        <div
+          key={item.alt}
+          className={
+            variant === 'awards'
+              ? 'flex size-[180px] items-center justify-center overflow-hidden p-4'
+              : 'flex h-[110.47px] min-w-0 items-center justify-center overflow-hidden p-4'
+          }
+        >
+          <div className={`relative shrink-0 ${item.className}`}>
+            <Image src={item.src} alt={item.alt} fill sizes={variant === 'awards' ? '164px' : '166px'} className="object-contain" />
+          </div>
         </div>
       ))}
     </div>
@@ -239,22 +255,25 @@ function LogoGrid({ items, padding = 'p-1' }: { items: LogoItem[]; padding?: 'p-
 function Footer() {
   return (
     <footer className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-      <div className="relative flex flex-col justify-between gap-6 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-8 pt-12 text-[#f6f6f6] sm:px-10 md:h-[365px] md:flex-row md:gap-5 md:py-10 lg:p-16">
+      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-        <div className="relative flex w-full max-w-[507px] flex-col justify-between gap-5 md:h-[266px]">
-          <div className="text-[24px] font-medium leading-[1.2] md:text-[40px] lg:text-[48px]">
-            <p className="text-[#999]">Let&apos;s Create Together</p>
-            <a href="#" className="mt-5 block font-semibold tracking-[-0.03em] text-white underline">
+        <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+          <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
+            <p className="text-[#999]">
+              Let&apos;s Create <br className="md:hidden" />
+              Together
+            </p>
+            <a href="#" className="block font-semibold tracking-[-0.03em] text-white underline md:mt-5">
               Contact us
             </a>
           </div>
-          <div className="flex items-start gap-3">
-            <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-10 w-20 [clip-path:inset(0)]" />
-            <span className="text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a]">design</span>
+          <div className="flex h-8 w-[108px] shrink-0 items-start gap-[5px] md:h-auto md:w-auto md:gap-3">
+            <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-8 min-w-0 flex-1 object-fill [clip-path:inset(0)] md:h-10 md:w-20 md:flex-none" />
+            <span className="min-w-0 flex-1 text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a] md:flex-none">design</span>
           </div>
         </div>
         <div className="relative flex w-full gap-5 text-[14px] font-medium leading-[1.2] tracking-[-0.03em] md:w-auto md:gap-12 md:text-[18px] lg:gap-32 lg:text-[20px]">
-          <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
             {navLinks.map((link) => {
               const href = getPageHref(link);
 
@@ -265,7 +284,7 @@ function Footer() {
               );
             })}
           </div>
-          <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
             {socialLinks.map((link) => (
               <a key={link} href="#">
                 {link}
@@ -280,15 +299,15 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill sm:mx-10 sm:w-[calc(100%-80px)] md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
       />
 
-      <div className="relative z-10 mt-6 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] sm:px-10 md:mt-0 md:justify-between md:text-[20px] lg:px-16">
+      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[20px] lg:px-16">
         <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
-        <a href="#" className="hidden w-[347px] text-center sm:block">
+        <a href="#" className="hidden w-[347px] text-center md:block">
           Privacy policy
         </a>
-        <a href="#" className="hidden w-[347px] text-right sm:block">
+        <a href="#" className="hidden w-[347px] text-right md:block">
           Terms of service
         </a>
       </div>
@@ -304,12 +323,12 @@ export function ConceptStudio() {
       <Header drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
 
       <section className="flex w-full flex-col gap-5 overflow-hidden bg-white px-4 pb-16 pt-6 md:gap-12 md:px-16 md:pt-16">
-        <div className="flex w-full max-w-[1180px] flex-col gap-5 md:gap-8">
+        <div className="flex w-full max-w-[1080px] flex-col gap-5 md:gap-8">
           <div className="flex flex-col gap-8 font-display text-[32px] leading-[1.04] tracking-[-0.01em] text-black md:text-[48px]" style={displayStyle}>
-            <div>
-              <p>we are a creative studio shaping the future of contemporary storytelling.</p>
-              <p>Our approach blends refined craft, cultural intelligence, and intentional creativity—grounded in craft, authenticity, and community.</p>
-            </div>
+            <p>
+              we are a creative studio shaping the future of contemporary storytelling. Our approach blends refined craft, cultural intelligence,
+              and intentional creativity—grounded in craft, authenticity, and community.
+            </p>
             <p>sc partners with brands, creatives, and communities to bring meaningful stories to life.</p>
           </div>
 
@@ -322,21 +341,41 @@ export function ConceptStudio() {
           </div>
         </div>
 
-        <section className="flex w-full max-w-[1180px] flex-col gap-4 sm:gap-6 md:gap-8">
-          <h2 className="max-w-[681px] font-display text-[36px] leading-[1.04] tracking-[-0.01em] text-black sm:text-[44px] lg:text-[56px]" style={displayStyle}>
+        <section className="flex w-full max-w-[1080px] flex-col gap-8">
+          <h2 className="max-w-[681px] font-display text-[48px] leading-[1.33] tracking-[-0.01em] text-black" style={displayStyle}>
             We set a new pace for how stories are remembered.
           </h2>
-          <LogoGrid items={awards} padding="p-1" />
+          <LogoGrid items={awards} variant="awards" />
         </section>
 
-        <section className="flex w-full max-w-[681px] flex-col gap-4 sm:gap-8 lg:gap-10">
+        <section className="flex w-full max-w-[1080px] items-start justify-center gap-6 max-md:flex-col">
           <h2
-            className="font-display text-[32px] leading-[1.1] tracking-[-0.01em] text-black sm:text-[36px] lg:text-[44px]"
+            className="flex min-w-0 flex-1 flex-col justify-center font-display text-[48px] leading-[41.43px] tracking-[-1.883px] text-black"
             style={displayStyle}
           >
-            we&apos;ve collaborated with a growing community of brands, creators, and organizations committed to meaningful storytelling.
+            Selected Clients
           </h2>
-          <LogoGrid items={clients} padding="p-2" />
+          <div className="flex shrink-0 flex-col items-center justify-center gap-8">
+            <p
+              className="max-w-[480px] text-[24px] font-medium leading-[1.33] tracking-[-0.703px] text-black md:whitespace-nowrap"
+              style={{ fontVariationSettings: '"wdth" 100' }}
+            >
+              Here are some brands you&apos;ll probably
+              <br />
+              recognize that we&apos;ve had the pleasure to
+              <br />
+              work with. Cool, right? Now that we&apos;ve got
+              <br />
+              your attention, we often say the bigger the
+              <br />
+              brand, the less room there is for creative
+              <br />
+              excitement as other priorities tend to
+              <br />
+              overshadow design.
+            </p>
+            <LogoGrid items={clients} variant="clients" />
+          </div>
         </section>
       </section>
 

@@ -22,7 +22,7 @@ type WorkCard = {
 };
 
 const navLinks = ['Work', 'About', 'Tests', 'The Rising Times'];
-const socialLinks = ['Phone', 'Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
+const socialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const menuLinks = ['Home', 'Work', 'studio', 'Test', 'the rising times'];
 const menuSocialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const testPageHref = '/test';
@@ -154,7 +154,7 @@ function SectionHeader({
       >
         {title}
       </h2>
-      <Link href={viewAllHref} className="text-[20px] font-medium leading-[1.33] tracking-[-0.03em] text-[#8c8787] underline md:text-[24px] lg:text-[28px]">
+      <Link href={viewAllHref} className="text-[16px] font-medium leading-[1.33] tracking-[-0.03em] text-[#8c8787] underline md:text-[24px] lg:text-[28px]">
         View all
       </Link>
     </div>
@@ -278,12 +278,12 @@ function Timeline({ progress, activeIndex }: { progress: number; activeIndex: nu
   return (
     <div
       data-tests-timeline
-      className="pointer-events-none absolute bottom-[-60px] left-1/2 h-[147px] w-[calc(100%+960px)] -translate-x-1/2 overflow-hidden opacity-15"
+      className="pointer-events-none absolute left-1/2 top-[309px] h-10 w-full -translate-x-1/2 overflow-hidden opacity-15 md:bottom-[-60px] md:top-auto md:h-[147px] md:w-[calc(100%+960px)]"
     >
       <div ref={timelineRef} className="h-full w-max will-change-transform">
-        <div className="flex h-full w-max animate-[spectrum-drift_18s_linear_infinite] gap-2">
+        <div className="flex h-full w-max animate-[spectrum-drift_18s_linear_infinite] gap-[2.183px] md:gap-2">
           {Array.from({ length: timelineGroups }).map((_, groupIndex) => (
-            <div key={groupIndex} className="flex h-full shrink-0 items-end gap-2">
+            <div key={groupIndex} className="flex h-full shrink-0 items-end gap-[2.183px] md:gap-2">
               {timelinePattern.map((height, index) => (
                 <span
                   key={`${groupIndex}-${index}`}
@@ -292,8 +292,8 @@ function Timeline({ progress, activeIndex }: { progress: number; activeIndex: nu
                       lineRefs.current[groupIndex * timelinePattern.length + index] = node;
                     }
                   }}
-                  className="w-0.5 shrink-0 bg-[#f6f6f6]"
-                  style={{ height }}
+                  className="h-[calc(var(--line-height)*0.272109)] w-[0.546px] shrink-0 bg-[#f6f6f6] md:h-[var(--line-height)] md:w-0.5"
+                  style={{ '--line-height': `${height}px` } as CSSProperties}
                 />
               ))}
             </div>
@@ -364,7 +364,7 @@ function TestsCarousel() {
     programmaticTargetRef.current = index;
     setActiveIndex(index);
 
-    const focusWidthShift = (546 - 444) / 2;
+    const focusWidthShift = window.innerWidth < 768 ? (281.303 - 228.778) / 2 : (546 - 444) / 2;
     const resizeCorrection = index > activeIndex ? -focusWidthShift : focusWidthShift;
     const nextLeft = Math.max(
       0,
@@ -414,7 +414,7 @@ function TestsCarousel() {
       <div
         ref={scrollerRef}
         onScroll={updateFocusFromScroll}
-        className="relative z-10 -mx-4 flex w-[calc(100%+32px)] touch-pan-x items-center gap-5 overflow-x-auto overflow-y-hidden px-4 pl-[calc(50vw-180px)] pr-[calc(50vw-180px)] [scrollbar-width:none] md:-mx-10 md:w-[calc(100%+80px)] md:gap-8 md:px-10 md:pl-[calc(50vw-240px)] md:pr-[calc(50vw-240px)] lg:-mx-16 lg:w-[calc(100%+128px)] lg:gap-12 lg:px-16 lg:pl-[464px] lg:pr-[464px] [&::-webkit-scrollbar]:hidden"
+        className="relative z-10 -mx-4 flex w-[calc(100%+32px)] touch-pan-x items-center gap-[12.396px] overflow-x-auto overflow-y-hidden px-8 [scrollbar-width:none] md:-mx-10 md:w-[calc(100%+80px)] md:gap-8 md:px-10 md:pl-[calc(50vw-240px)] md:pr-[calc(50vw-240px)] lg:-mx-16 lg:w-[calc(100%+128px)] lg:gap-12 lg:px-16 lg:pl-[464px] lg:pr-[464px] [&::-webkit-scrollbar]:hidden"
       >
         {testCards.map((src, index) => {
           const isActive = activeIndex === index;
@@ -432,7 +432,7 @@ function TestsCarousel() {
               aria-label={isActive ? `Selected test ${index + 1}` : `Focus test ${index + 1}`}
               aria-pressed={isActive}
               className={`relative block shrink-0 transition-[width,height,transform,filter] duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f6f6f6] ${
-                isActive ? 'h-[298px] w-[361px] md:w-[460px] lg:w-[546px]' : 'h-[242px] w-[292px] md:w-[374px] lg:w-[444px]'
+                isActive ? 'h-[153.532px] w-[281.303px] md:h-[298px] md:w-[460px] lg:w-[546px]' : 'h-[125.478px] w-[228.778px] md:h-[242px] md:w-[374px] lg:w-[444px]'
               } ${isActive ? 'cursor-default' : 'cursor-pointer hover:scale-[1.015] hover:brightness-110'}`}
             >
               <Image
@@ -449,7 +449,7 @@ function TestsCarousel() {
               />
               <span
                 className={`absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 overflow-hidden transition-[width,height] duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] ${
-                  isActive ? 'h-[266px] w-[329px] md:w-[421px] lg:w-[500px]' : 'h-[216px] w-[267px] md:w-[343px] lg:w-[407px]'
+                  isActive ? 'h-[137.394px] w-[258.259px] md:h-[266px] md:w-[421px] lg:w-[500px]' : 'h-[111.727px] w-[210.013px] md:h-[216px] md:w-[343px] lg:w-[407px]'
                 }`}
               >
                 <Image
@@ -662,7 +662,9 @@ export function ConceptHome() {
           className="font-display text-[48px] leading-[1.1] tracking-[-0.02em] md:text-[56px] lg:text-[64px]"
           style={bebasNeueDisplayStyle}
         >
-          a creative studio shaping the future of contemporary storytelling.
+          <span className="lg:whitespace-nowrap">a creative studio shaping the future of contemporary</span>
+          <br />
+          storytelling.
         </h1>
         <p
           data-node-id="45:12508"
@@ -729,7 +731,7 @@ export function ConceptHome() {
         </div>
       </section>
 
-      <section id="tests-section" className="relative flex h-[520px] flex-col gap-8 overflow-hidden bg-[#131111] px-4 py-6 text-[#f6f6f6] md:h-[610px] md:px-10 md:py-10 lg:h-[680px] lg:gap-12 lg:px-16 lg:py-16">
+      <section id="tests-section" className="relative flex h-[348.532px] flex-col gap-12 overflow-hidden bg-[#131111] px-4 pt-6 text-[#f6f6f6] md:h-[610px] md:gap-8 md:px-10 md:py-10 lg:h-[680px] lg:gap-12 lg:px-16 lg:py-16">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
         <div className="relative z-10">
           <SectionHeader title="Tests" tone="dark" viewAllHref={testPageHref} />
@@ -738,29 +740,32 @@ export function ConceptHome() {
       </section>
 
       <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-        <div className="relative flex flex-col justify-between gap-6 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-8 pt-12 text-[#f6f6f6] md:h-[365px] md:flex-row md:gap-5 md:p-10 lg:p-16">
+        <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
           <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-          <div className="relative flex w-full max-w-[507px] flex-col justify-between gap-5 md:h-[266px]">
-            <div className="text-[24px] font-medium leading-[1.2] md:text-[40px] lg:text-[48px]">
-              <p className="text-[#999]">Let’s Create Together</p>
-              <a href="#" className="mt-5 block font-semibold tracking-[-0.03em] text-white underline">
+          <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+            <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
+              <p className="text-[#999]">
+                Let’s Create <br className="md:hidden" />
+                Together
+              </p>
+              <a href="#" className="block font-semibold tracking-[-0.03em] text-white underline md:mt-5">
                 Contact us
               </a>
             </div>
-            <div className="flex items-start gap-3">
-              <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-10 w-20 [clip-path:inset(0)]" />
-              <span className="text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a]">design</span>
+            <div className="flex h-8 w-[108px] shrink-0 items-start gap-[5px] md:h-auto md:w-auto md:gap-3">
+              <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-8 min-w-0 flex-1 object-fill [clip-path:inset(0)] md:h-10 md:w-20 md:flex-none" />
+              <span className="min-w-0 flex-1 text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a] md:flex-none">design</span>
             </div>
           </div>
           <div className="relative flex w-full gap-5 text-[14px] font-medium leading-[1.2] tracking-[-0.03em] md:w-auto md:gap-12 md:text-[18px] lg:gap-32 lg:text-[20px]">
-            <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+            <div className="flex min-w-0 flex-1 flex-col gap-5">
               {navLinks.map((link) => (
                 <Link key={link} href={getPageHref(link)}>
                   {link}
                 </Link>
               ))}
             </div>
-            <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+            <div className="flex min-w-0 flex-1 flex-col gap-5">
               {socialLinks.map((link) => (
                 <a key={link} href="#">
                   {link}
@@ -778,7 +783,7 @@ export function ConceptHome() {
           className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:w-[calc(100%-80px)] md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
         />
 
-        <div className="relative z-10 mt-6 flex w-full items-center justify-center px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[18px] lg:px-16 lg:text-[20px]">
+        <div className="relative z-10 mt-3 flex w-full items-center justify-center px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[18px] lg:px-16 lg:text-[20px]">
           <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
           <a href="#" className="hidden w-[347px] text-center md:block">
             Privacy policy

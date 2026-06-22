@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { markIntroBypassedForInternalNavigation } from '../introNavigation';
 
 const navLinks = ['Work', 'About', 'Tests', 'The Rising Times'];
-const socialLinks = ['Phone', 'Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
+const socialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const menuLinks = ['Home', 'Work', 'studio', 'Test', 'the rising times'];
 const menuSocialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const testPageHref = '/test';
@@ -41,6 +41,7 @@ type HeroSlide = {
   description: string;
   image: string;
   thumb: string;
+  videoSrc?: string;
   objectPosition?: string;
 };
 
@@ -54,95 +55,177 @@ const heroSlides: HeroSlide[] = [
     objectPosition: '47% 50%',
   },
   {
-    title: 'the social innovator',
-    category: 'Campaign Film',
-    description: 'portraits of movement, memory, and modern creative identity.',
-    image: '/assets/work/figma-35830616/hero-thumb-01.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-01.png',
-  },
-  {
-    title: 'afro futurist',
-    category: 'Campaign Film',
-    description: 'a chromatic study of fashion, movement, and speculative culture.',
-    image: '/assets/work/figma-35830616/hero-thumb-02.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-02.png',
-  },
-  {
-    title: 'the social innovator',
-    category: 'Campaign Film',
-    description: 'portraits of movement, memory, and modern creative identity.',
-    image: '/assets/work/figma-35830616/hero-thumb-03.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-03.png',
+    title: 'pink memory',
+    category: 'Portrait Film',
+    description: 'a still portrait built from color, quiet confidence, and remembered space.',
+    image: '/assets/work/figma-35830616/card-01.png',
+    thumb: '/assets/work/figma-35830616/card-01.png',
+    objectPosition: '50% 35%',
   },
   {
     title: 'weakness',
     category: 'Narrative Short',
     description: 'a boxing-ring fragment about inner conflict, courage, and balance.',
-    image: '/assets/work/figma-35830616/hero-thumb-04.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-04.png',
+    image: '/assets/work/figma-35830616/card-02.png',
+    thumb: '/assets/work/figma-35830616/card-02.png',
   },
   {
-    title: 'freedom in the soul',
+    title: 'king ketelby james',
     category: 'Portrait Film',
-    description: 'a quiet image sequence about presence, release, and self-possession.',
-    image: '/assets/work/figma-35830616/hero-thumb-05.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-05.png',
+    description: 'a warm portrait built around gesture, ease, and the confidence of presence.',
+    image: '/assets/work/figma-35830616/card-03.png',
+    thumb: '/assets/work/figma-35830616/card-03.png',
   },
   {
-    title: 'her prayer my journey',
-    category: 'Editorial Film',
-    description: 'a tactile story of devotion, lineage, and personal mythology.',
-    image: '/assets/work/figma-35830616/hero-thumb-06.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-06.png',
+    title: 'free the youth',
+    category: 'Cultural Story',
+    description: 'a window into place, texture, and the quiet charge of contemporary identity.',
+    image: '/assets/work/figma-35830616/card-04.png',
+    thumb: '/assets/work/figma-35830616/card-04.png',
+    objectPosition: '42% 50%',
   },
   {
-    title: 'the rising times',
-    category: 'Studio Archive',
-    description: 'fragments from the archive, held between graphic memory and motion.',
-    image: '/assets/work/figma-35830616/hero-thumb-07.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-07.png',
+    title: 'vim campaign',
+    category: 'Brand Film',
+    description: 'a close study of youth, pause, and character inside a moving campaign world.',
+    image: '/assets/work/figma-35830616/card-05.png',
+    thumb: '/assets/work/figma-35830616/card-05.png',
+    objectPosition: '58% 50%',
   },
   {
-    title: 'weakness',
+    title: 'song of songs',
+    category: 'Editorial Story',
+    description: 'a sunlit frame of movement, color, and memory held in a single still.',
+    image: '/assets/work/figma-35830616/card-06.png',
+    thumb: '/assets/work/figma-35830616/card-06.png',
+    objectPosition: '50% 45%',
+  },
+  {
+    title: 'idle reverie',
+    category: 'Visual Study',
+    description: 'a nighttime portrait shaped by chrome, shadow, and a feeling of interior rhythm.',
+    image: '/assets/work/figma-35830616/card-07.png',
+    thumb: '/assets/work/figma-35830616/card-07.png',
+    objectPosition: '42% 50%',
+  },
+  {
+    title: 'flo remembers landscape',
     category: 'Narrative Short',
-    description: 'a boxing-ring fragment about inner conflict, courage, and balance.',
-    image: '/assets/work/figma-35830616/hero-thumb-04.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-04.png',
+    description: 'a wide memory held in color, distance, and a slow unfolding frame.',
+    image: '/assets/work/figma-35830616/card-08.png',
+    thumb: '/assets/work/figma-35830616/card-08.png',
   },
   {
-    title: 'freedom in the soul',
-    category: 'Portrait Film',
-    description: 'a quiet image sequence about presence, release, and self-possession.',
-    image: '/assets/work/figma-35830616/hero-thumb-05.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-05.png',
-  },
-  {
-    title: 'the social innovator',
+    title: 'ever young street',
     category: 'Campaign Film',
-    description: 'portraits of movement, memory, and modern creative identity.',
-    image: '/assets/work/figma-35830616/hero-thumb-03.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-03.png',
+    description: 'a bright street image about youth, confidence, and kinetic style.',
+    image: '/assets/images/Hero/six.jpg',
+    thumb: '/assets/images/Hero/six.jpg',
   },
   {
     title: 'afro futurist',
     category: 'Campaign Film',
     description: 'a chromatic study of fashion, movement, and speculative culture.',
-    image: '/assets/work/figma-35830616/hero-thumb-02.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-02.png',
+    image: '/assets/images/Hero/four.jpg',
+    thumb: '/assets/images/Hero/four.jpg',
   },
   {
-    title: 'the rising times',
-    category: 'Studio Archive',
-    description: 'fragments from the archive, held between graphic memory and motion.',
-    image: '/assets/work/figma-35830616/hero-thumb-07.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-07.png',
+    title: 'ever young',
+    category: 'Campaign Film',
+    description: 'a bright collision of attitude, texture, and motion through a youthful lens.',
+    image: '/assets/figma-home/workEverYoung.jpg',
+    thumb: '/assets/figma-home/workEverYoung.jpg',
+  },
+  {
+    title: 'freedom in the soul',
+    category: 'Portrait Film',
+    description: 'a quiet image sequence about presence, release, and self-possession.',
+    image: '/assets/figma-home/workFreedom.jpg',
+    thumb: '/assets/figma-home/workFreedom.jpg',
   },
   {
     title: 'her prayer my journey',
     category: 'Editorial Film',
     description: 'a tactile story of devotion, lineage, and personal mythology.',
-    image: '/assets/work/figma-35830616/hero-thumb-06.png',
-    thumb: '/assets/work/figma-35830616/hero-thumb-06.png',
+    image: '/assets/figma-home/workPrayer.jpg',
+    thumb: '/assets/figma-home/workPrayer.jpg',
+  },
+  {
+    title: 'social frame',
+    category: 'Campaign Film',
+    description: 'a charged frame of movement, posture, and a world already in progress.',
+    image: '/assets/figma-home/workSocial.jpg',
+    thumb: '/assets/figma-home/workSocial.jpg',
+  },
+  {
+    title: 'social innovator ii',
+    category: 'Campaign Film',
+    description: 'a street-level portrait shaped by pace, gaze, and contemporary culture.',
+    image: '/assets/figma-home/workSocialTwo.jpg',
+    thumb: '/assets/figma-home/workSocialTwo.jpg',
+  },
+  {
+    title: 'the bell rings',
+    category: 'Narrative Short',
+    description: 'a solitary boxing image held in shadow, pressure, and anticipation.',
+    image: '/assets/images/Hero/five.jpg',
+    thumb: '/assets/images/Hero/five.jpg',
+  },
+  {
+    title: 'what do i desire',
+    category: 'Video Essay',
+    description: 'a question held in portraiture, paper, and intimate reflection.',
+    image: '/assets/figma-home/testSelected.jpg',
+    thumb: '/assets/figma-home/testSelected.jpg',
+  },
+  {
+    title: 'almost joy',
+    category: 'Visual Test',
+    description: 'a soft experiment in expression, color, and the memory of joy.',
+    image: '/assets/figma-home/testTwo.png',
+    thumb: '/assets/figma-home/testTwo.png',
+  },
+  {
+    title: 'one big wave',
+    category: 'Visual Test',
+    description: 'a coastal frame about motion, balance, and the body near water.',
+    image: '/assets/figma-home/testThree.jpg',
+    thumb: '/assets/figma-home/testThree.jpg',
+  },
+  {
+    title: 'mirrors',
+    category: 'Visual Test',
+    description: 'a reflected study of face, gesture, and split attention.',
+    image: '/assets/figma-home/testFour.jpg',
+    thumb: '/assets/figma-home/testFour.jpg',
+  },
+  {
+    title: 'idle reverie pt. ii',
+    category: 'Visual Test',
+    description: 'a darker study in stillness, glow, and late-night interior mood.',
+    image: '/assets/figma-home/testFive.jpg',
+    thumb: '/assets/figma-home/testFive.jpg',
+  },
+  {
+    title: 'waterfall memory',
+    category: 'Archive Image',
+    description: 'a wide natural frame built from falling water, ritual, and atmosphere.',
+    image: '/assets/images/Hero/eight.jpg',
+    thumb: '/assets/images/Hero/eight.jpg',
+  },
+  {
+    title: 'blue hour',
+    category: 'Archive Image',
+    description: 'a blue-toned frame from the archive, held between pause and motion.',
+    image: '/assets/images/Hero/two.jpg',
+    thumb: '/assets/images/Hero/two.jpg',
+  },
+  {
+    title: 'sunset ridge',
+    category: 'Archive Image',
+    description: 'a coastal horizon held in warm light, distance, and open air.',
+    image: '/assets/images/Hero/twelve.jpg',
+    thumb: '/assets/images/Hero/twelve.jpg',
   },
 ];
 
@@ -186,7 +269,7 @@ const workItems: WorkItem[] = [
     title: 'song of songs',
     src: ['/assets/work/figma-35830616/card-06-base.png', '/assets/work/figma-35830616/card-06.png'],
     alt: 'Song of Songs still',
-    widthClass: 'lg:col-span-15',
+    widthClass: 'lg:col-span-15 lg:w-[817px]',
     priority: true,
   },
   {
@@ -351,7 +434,23 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
 }
 
 function PlayGlyph() {
-  return <Image src="/assets/icons/play.svg" alt="" width={14} height={13} aria-hidden className="size-[14px] rotate-90 invert" />;
+  return (
+    <svg className="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path
+        d="M7.36 4.12C7.36 3.57 7.96 3.24 8.43 3.53L15.28 7.81C15.73 8.09 15.73 8.76 15.28 9.04L8.43 13.32C7.96 13.61 7.36 13.28 7.36 12.73V4.12Z"
+        fill="#fef3d9"
+      />
+    </svg>
+  );
+}
+
+function MenuGlyph() {
+  return (
+    <svg className="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M3.5 7.2H16.5" stroke="#f0d897" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M3.5 12.8H16.5" stroke="#f0d897" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
 }
 
 function InfoGlyph() {
@@ -388,7 +487,7 @@ function HeroContent({ slide }: { slide: HeroSlide }) {
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             Credits
-            <Image src="/assets/figma-home/menu.svg" alt="" width={20} height={20} aria-hidden className="size-5" />
+            <MenuGlyph />
           </a>
         </div>
       </div>
@@ -407,6 +506,19 @@ function HeroCarousel({
   const itemRefs = useRef<HTMLButtonElement[]>([]);
   const programmaticTargetRef = useRef<number | null>(null);
   const programmaticTimerRef = useRef<number | null>(null);
+  const scrollTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (programmaticTimerRef.current) {
+        window.clearTimeout(programmaticTimerRef.current);
+      }
+
+      if (scrollTimerRef.current) {
+        window.clearTimeout(scrollTimerRef.current);
+      }
+    };
+  }, []);
 
   const selectSlide = (index: number) => {
     programmaticTargetRef.current = index;
@@ -431,20 +543,32 @@ function HeroCarousel({
             return;
           }
 
-          const center = scroller.scrollLeft + scroller.clientWidth / 2;
-          const closest = itemRefs.current.reduce((closestIndex, item, index) => {
-            const closestItem = itemRefs.current[closestIndex];
-            const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-            const closestCenter = closestItem.offsetLeft + closestItem.offsetWidth / 2;
-
-            return Math.abs(itemCenter - center) < Math.abs(closestCenter - center) ? index : closestIndex;
-          }, 0);
-
-          if (closest !== activeIndex) {
-            onSelect(closest);
+          if (scrollTimerRef.current) {
+            window.clearTimeout(scrollTimerRef.current);
           }
+
+          scrollTimerRef.current = window.setTimeout(() => {
+            const currentScroller = scrollerRef.current;
+
+            if (!currentScroller || programmaticTargetRef.current !== null) {
+              return;
+            }
+
+            const center = currentScroller.scrollLeft + currentScroller.clientWidth / 2;
+            const closest = itemRefs.current.reduce((closestIndex, item, index) => {
+              const closestItem = itemRefs.current[closestIndex];
+              const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+              const closestCenter = closestItem.offsetLeft + closestItem.offsetWidth / 2;
+
+              return Math.abs(itemCenter - center) < Math.abs(closestCenter - center) ? index : closestIndex;
+            }, 0);
+
+            if (closest !== activeIndex) {
+              onSelect(closest);
+            }
+          }, 120);
         }}
-        className="-mx-4 flex w-[calc(100%+32px)] touch-pan-x items-center gap-2 overflow-x-auto overflow-y-hidden px-4 drop-shadow-[0_0_66px_rgba(0,0,0,0.95)] [scrollbar-width:none] sm:-mx-10 sm:w-[calc(100%+80px)] sm:px-10 lg:-mx-16 lg:w-[calc(100%+128px)] lg:px-16 [&::-webkit-scrollbar]:hidden"
+        className="-mx-4 flex w-[calc(100%+32px)] touch-pan-x scroll-smooth items-center gap-2 overflow-x-auto overflow-y-hidden px-4 drop-shadow-[0_0_66px_rgba(0,0,0,0.95)] [scrollbar-width:none] sm:-mx-10 sm:w-[calc(100%+80px)] sm:px-10 lg:-mx-16 lg:w-[calc(100%+128px)] lg:px-16 [&::-webkit-scrollbar]:hidden"
       >
         {heroSlides.map((slide, index) => {
           const selected = activeIndex === index;
@@ -464,7 +588,7 @@ function HeroCarousel({
               className={`relative shrink-0 overflow-hidden rounded-[2px] transition-[width,height,opacity,filter] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white ${
                 selected
                   ? 'h-[96px] w-[158px] border-2 border-white opacity-100 md:h-[116px] md:w-[190px] lg:h-[132px] lg:w-[216px]'
-                  : 'h-[76px] w-[58px] opacity-100 hover:opacity-100 md:h-[92px] md:w-[70px] lg:h-[104px] lg:w-20'
+                  : 'h-[76px] w-[58px] opacity-100 grayscale saturate-0 hover:opacity-100 md:h-[92px] md:w-[70px] lg:h-[104px] lg:w-20'
               }`}
             >
               <Image src={slide.thumb} alt="" fill sizes={selected ? '216px' : '80px'} className="object-cover" />
@@ -478,7 +602,10 @@ function HeroCarousel({
 
 function WorkHero({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerOpen: (open: boolean) => void }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [readyVideoSrc, setReadyVideoSrc] = useState<string | null>(null);
   const activeSlide = heroSlides[activeIndex];
+  const activeVideoSrc = activeSlide.videoSrc ?? `/assets/work/generated-videos/slide-${String(activeIndex + 1).padStart(2, '0')}.mp4`;
+  const videoReady = readyVideoSrc === activeVideoSrc;
 
   return (
     <section className="relative flex h-[714px] w-full flex-col overflow-hidden bg-black text-white md:h-[860px] lg:h-[1000px]">
@@ -494,6 +621,23 @@ function WorkHero({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawe
           style={{ objectPosition: slide.objectPosition ?? '50% 50%' }}
         />
       ))}
+      {activeVideoSrc ? (
+        <video
+          key={activeVideoSrc}
+          className={`absolute inset-0 size-full object-cover transition-opacity duration-500 ${videoReady ? 'opacity-100' : 'opacity-0'}`}
+          style={{ objectPosition: activeSlide.objectPosition ?? '50% 50%' }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={activeSlide.image}
+          aria-label={`${activeSlide.title} video`}
+          onCanPlay={() => setReadyVideoSrc(activeVideoSrc)}
+        >
+          <source src={activeVideoSrc} type="video/mp4" />
+        </video>
+      ) : null}
       <div className="absolute inset-0 bg-black/10" />
       <Header drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
       <HeroContent slide={activeSlide} />
@@ -563,22 +707,25 @@ function AllWork() {
 function Footer() {
   return (
     <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-      <div className="relative flex flex-col justify-between gap-6 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-8 pt-12 text-[#f6f6f6] sm:px-10 md:h-[365px] md:flex-row md:gap-5 md:py-10 lg:p-16">
+      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-        <div className="relative flex w-full max-w-[507px] flex-col justify-between gap-5 md:h-[266px]">
-          <div className="text-[24px] font-medium leading-[1.2] md:text-[40px] lg:text-[48px]">
-            <p className="text-[#999]">Let&apos;s Create Together</p>
-            <a href="#" className="mt-5 block font-semibold tracking-[-0.03em] text-white underline">
+        <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+          <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
+            <p className="text-[#999]">
+              Let&apos;s Create <br className="md:hidden" />
+              Together
+            </p>
+            <a href="#" className="block font-semibold tracking-[-0.03em] text-white underline md:mt-5">
               Contact us
             </a>
           </div>
-          <div className="flex items-start gap-3">
-            <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-10 w-20 [clip-path:inset(0)]" />
-            <span className="text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a]">design</span>
+          <div className="flex h-8 w-[108px] shrink-0 items-start gap-[5px] md:h-auto md:w-auto md:gap-3">
+            <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-8 min-w-0 flex-1 object-fill [clip-path:inset(0)] md:h-10 md:w-20 md:flex-none" />
+            <span className="min-w-0 flex-1 text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a] md:flex-none">design</span>
           </div>
         </div>
         <div className="relative flex w-full gap-5 text-[14px] font-medium leading-[1.2] tracking-[-0.03em] md:w-auto md:gap-12 md:text-[18px] lg:gap-32 lg:text-[20px]">
-          <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
             {navLinks.map((link) => {
               const href = getPageHref(link);
 
@@ -589,7 +736,7 @@ function Footer() {
               );
             })}
           </div>
-          <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
             {socialLinks.map((link) => (
               <a key={link} href="#">
                 {link}
@@ -604,15 +751,15 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill sm:mx-10 sm:w-[calc(100%-80px)] md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
       />
 
-      <div className="relative z-10 mt-6 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] sm:px-10 md:mt-0 md:justify-between md:text-[20px] lg:px-16">
+      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[20px] lg:px-16">
         <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
-        <a href="#" className="hidden w-[347px] text-center sm:block">
+        <a href="#" className="hidden w-[347px] text-center md:block">
           Privacy policy
         </a>
-        <a href="#" className="hidden w-[347px] text-right sm:block">
+        <a href="#" className="hidden w-[347px] text-right md:block">
           Terms of service
         </a>
       </div>

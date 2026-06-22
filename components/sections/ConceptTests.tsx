@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { markIntroBypassedForInternalNavigation } from '../introNavigation';
 
 const navLinks = ['Work', 'About', 'Tests', 'The Rising Times'];
-const socialLinks = ['Phone', 'Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
+const socialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const menuLinks = ['Home', 'Work', 'studio', 'Test', 'the rising times'];
 const menuSocialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const testPageHref = '/test';
@@ -365,29 +365,32 @@ function FeaturedTest({
 function Footer() {
   return (
     <footer className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-      <div className="relative flex flex-col justify-between gap-6 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-8 pt-12 text-[#f6f6f6] sm:px-10 md:h-[365px] md:flex-row md:gap-5 md:py-10 lg:p-16">
+      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
-        <div className="relative flex w-full max-w-[507px] flex-col justify-between gap-5 md:h-[266px]">
-          <div className="text-[24px] font-medium leading-[1.2] md:text-[40px] lg:text-[48px]">
-            <p className="text-[#999]">Let’s Create Together</p>
-            <a href="#" className="mt-5 block font-semibold tracking-[-0.03em] text-white underline">
+        <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
+          <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
+            <p className="text-[#999]">
+              Let’s Create <br className="md:hidden" />
+              Together
+            </p>
+            <a href="#" className="block font-semibold tracking-[-0.03em] text-white underline md:mt-5">
               Contact us
             </a>
           </div>
-          <div className="flex items-start gap-3">
-            <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-10 w-20 [clip-path:inset(0)]" />
-            <span className="text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a]">design</span>
+          <div className="flex h-8 w-[108px] shrink-0 items-start gap-[5px] md:h-auto md:w-auto md:gap-3">
+            <Image src="/assets/figma-home/footer-badge-vector.svg" alt="" width={80} height={40} className="h-8 min-w-0 flex-1 object-fill [clip-path:inset(0)] md:h-10 md:w-20 md:flex-none" />
+            <span className="min-w-0 flex-1 text-[16px] font-semibold lowercase leading-[1.4] text-[#9a9a9a] md:flex-none">design</span>
           </div>
         </div>
         <div className="relative flex w-full gap-5 text-[14px] font-medium leading-[1.2] tracking-[-0.03em] md:w-auto md:gap-12 md:text-[18px] lg:gap-32 lg:text-[20px]">
-          <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
             {navLinks.map((link) => (
               <Link key={link} href={getPageHref(link)} onClick={() => handleInternalNavigation(getPageHref(link))}>
                 {link}
               </Link>
             ))}
           </div>
-          <div className="flex flex-1 flex-col gap-5 md:w-[187px] md:flex-none">
+          <div className="flex min-w-0 flex-1 flex-col gap-5">
             {socialLinks.map((link) => (
               <a key={link} href="#">
                 {link}
@@ -402,15 +405,15 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill sm:mx-10 sm:w-[calc(100%-80px)] md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
       />
 
-      <div className="relative z-10 mt-6 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] sm:px-10 md:mt-0 md:justify-between md:text-[20px] lg:px-16">
+      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[20px] lg:px-16">
         <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
-        <a href="#" className="hidden w-[347px] text-center sm:block">
+        <a href="#" className="hidden w-[347px] text-center md:block">
           Privacy policy
         </a>
-        <a href="#" className="hidden w-[347px] text-right sm:block">
+        <a href="#" className="hidden w-[347px] text-right md:block">
           Terms of service
         </a>
       </div>
