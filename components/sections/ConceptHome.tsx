@@ -740,7 +740,7 @@ export function ConceptHome() {
       </section>
 
       <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-        <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
+        <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
           <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
           <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
             <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
@@ -758,14 +758,14 @@ export function ConceptHome() {
             </div>
           </div>
           <div className="relative flex w-full gap-5 text-[14px] font-medium leading-[1.2] tracking-[-0.03em] md:w-auto md:gap-12 md:text-[18px] lg:gap-32 lg:text-[20px]">
-            <div className="flex min-w-0 flex-1 flex-col gap-5">
+            <div className="flex min-w-0 flex-1 flex-col gap-5 lg:w-[187px] lg:flex-none">
               {navLinks.map((link) => (
                 <Link key={link} href={getPageHref(link)}>
                   {link}
                 </Link>
               ))}
             </div>
-            <div className="flex min-w-0 flex-1 flex-col gap-5">
+            <div className="flex min-w-0 flex-1 flex-col gap-5 lg:w-[187px] lg:flex-none">
               {socialLinks.map((link) => (
                 <a key={link} href="#">
                   {link}
@@ -780,15 +780,15 @@ export function ConceptHome() {
           alt="smallcrowdd."
           width={1384}
           height={196}
-          className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:w-[calc(100%-80px)] md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
+          className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:w-[calc(100%-80px)] md:-translate-x-1/2 lg:w-[1384px] lg:max-w-[calc(100%-56px)]"
         />
 
-        <div className="relative z-10 mt-3 flex w-full items-center justify-center px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[18px] lg:px-16 lg:text-[20px]">
+        <div className="relative z-10 mt-3 flex w-full items-center justify-center px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-10 md:text-[18px] lg:px-16 lg:text-[20px]">
           <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
-          <a href="#" className="hidden w-[347px] text-center md:block">
+          <a href="#" className="hidden">
             Privacy policy
           </a>
-          <a href="#" className="hidden w-[347px] text-right md:block">
+          <a href="#" className="hidden">
             Terms of service
           </a>
         </div>

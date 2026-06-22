@@ -435,21 +435,25 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
 
 function PlayGlyph() {
   return (
-    <svg className="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path
-        d="M7.36 4.12C7.36 3.57 7.96 3.24 8.43 3.53L15.28 7.81C15.73 8.09 15.73 8.76 15.28 9.04L8.43 13.32C7.96 13.61 7.36 13.28 7.36 12.73V4.12Z"
-        fill="#fef3d9"
-      />
-    </svg>
+    <span className="relative size-5 shrink-0" aria-hidden="true">
+      <Image src="/assets/work/figma-35830616/icons/action-play-keylines.svg" alt="" fill className="object-fill" />
+      <span className="absolute inset-[1.67%_15.15%_16.13%_0.2%] flex items-center justify-center">
+        <span className="relative block h-[12.16px] w-[13.18px] -rotate-[30deg]">
+          <Image src="/assets/work/figma-35830616/icons/action-play-polygon.svg" alt="" fill className="object-fill" />
+        </span>
+      </span>
+    </span>
   );
 }
 
 function MenuGlyph() {
   return (
-    <svg className="size-5 shrink-0" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path d="M3.5 7.2H16.5" stroke="#f0d897" strokeWidth="1.8" strokeLinecap="round" />
-      <path d="M3.5 12.8H16.5" stroke="#f0d897" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
+    <span className="relative size-5 shrink-0" aria-hidden="true">
+      <Image src="/assets/work/figma-35830616/icons/action-menu-keylines.svg" alt="" fill className="object-fill" />
+      <span className="absolute inset-y-1/4 left-[16.67%] right-[16.67%]">
+        <Image src="/assets/work/figma-35830616/icons/action-menu-vector.svg" alt="" fill className="object-fill" />
+      </span>
+    </span>
   );
 }
 
@@ -472,10 +476,10 @@ function HeroContent({ slide }: { slide: HeroSlide }) {
             {slide.description}
           </p>
         </div>
-        <div className="flex items-start gap-2">
+        <div className="flex cursor-pointer items-start gap-2">
           <a
             href="#"
-            className="flex h-9 items-center gap-2 rounded-[1px] bg-black px-3 py-2 text-[16px] font-semibold capitalize leading-[1.4] text-white"
+            className="flex items-center gap-2 rounded-[1px] bg-black px-3 py-2 text-[16px] font-semibold capitalize leading-[1.4] text-white"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             Watch
@@ -483,7 +487,7 @@ function HeroContent({ slide }: { slide: HeroSlide }) {
           </a>
           <a
             href="#"
-            className="flex h-9 items-center gap-2 rounded-[1px] bg-white px-3 py-2 text-[16px] font-semibold capitalize leading-[1.4] text-black"
+            className="flex items-center gap-2 rounded-[1px] bg-white px-3 py-2 text-[16px] font-semibold capitalize leading-[1.4] text-black"
             style={{ fontVariationSettings: '"wdth" 100' }}
           >
             Credits
@@ -707,7 +711,7 @@ function AllWork() {
 function Footer() {
   return (
     <footer id="the-rising-times" className="relative flex flex-col overflow-hidden bg-white pb-4 md:h-[560px] md:justify-between lg:h-[600px]">
-      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
+      <div className="relative mb-[-8px] flex flex-col gap-8 overflow-hidden rounded-b-3xl lg:rounded-b-[32px] bg-[#131111] px-4 pb-6 pt-12 text-[#f6f6f6] md:mb-0 md:h-[365px] md:flex-row md:justify-between md:gap-5 md:p-10 lg:p-16">
         <div className="absolute inset-0 opacity-20 mix-blend-hard-light [background-image:url('/assets/loader/noise.png')] [background-size:240px_180px]" />
         <div className="relative flex w-full items-start gap-2.5 md:h-[266px] md:max-w-[507px] md:flex-col md:justify-between md:gap-5">
           <div className="flex min-w-0 flex-1 flex-col gap-2 text-[24px] font-medium leading-[1.2] md:block md:text-[40px] lg:text-[48px]">
@@ -725,7 +729,7 @@ function Footer() {
           </div>
         </div>
         <div className="relative flex w-full gap-5 text-[14px] font-medium leading-[1.2] tracking-[-0.03em] md:w-auto md:gap-12 md:text-[18px] lg:gap-32 lg:text-[20px]">
-          <div className="flex min-w-0 flex-1 flex-col gap-5">
+          <div className="flex min-w-0 flex-1 flex-col gap-5 lg:w-[187px] lg:flex-none">
             {navLinks.map((link) => {
               const href = getPageHref(link);
 
@@ -736,7 +740,7 @@ function Footer() {
               );
             })}
           </div>
-          <div className="flex min-w-0 flex-1 flex-col gap-5">
+          <div className="flex min-w-0 flex-1 flex-col gap-5 lg:w-[187px] lg:flex-none">
             {socialLinks.map((link) => (
               <a key={link} href="#">
                 {link}
@@ -751,15 +755,15 @@ function Footer() {
         alt="smallcrowdd."
         width={1384}
         height={196}
-        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[calc(100%-128px)]"
+        className="relative mx-4 h-auto w-[calc(100%-32px)] object-fill md:absolute md:left-1/2 md:top-[334px] md:mx-0 md:mt-0 md:-translate-x-1/2 lg:w-[1384px] lg:max-w-[calc(100%-56px)]"
       />
 
-      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-between md:px-10 md:text-[20px] lg:px-16">
+      <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-4 px-4 text-center text-[14px] font-medium leading-[1.2] tracking-[-0.03em] text-[#131111] md:mt-0 md:justify-center md:px-10 md:text-[20px] lg:px-16">
         <p className="whitespace-nowrap">All rights reserved ©smallcrowdd 2026</p>
-        <a href="#" className="hidden w-[347px] text-center md:block">
+        <a href="#" className="hidden">
           Privacy policy
         </a>
-        <a href="#" className="hidden w-[347px] text-right md:block">
+        <a href="#" className="hidden">
           Terms of service
         </a>
       </div>
