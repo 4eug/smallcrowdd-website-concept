@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { markIntroBypassedForInternalNavigation } from '../introNavigation';
 
-const navLinks = ['Work', 'About', 'Tests', 'The Rising Times'];
+const navLinks = ['Work', 'Studio', 'Tests', 'The Rising Times'];
 const socialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
 const menuLinks = ['Home', 'Work', 'studio', 'Test', 'the rising times'];
 const menuSocialLinks = ['Instagram', 'Tiktok', 'LinkedIn', 'Vimeo'];
@@ -263,7 +263,7 @@ const workItems: WorkItem[] = [
     title: 'song of songs',
     src: ['/assets/work/figma-35830616/card-06-base.png', '/assets/work/figma-35830616/card-06.png'],
     alt: 'Song of Songs still',
-    widthClass: 'lg:col-span-15 lg:w-[817px]',
+    widthClass: 'lg:col-span-15 lg:w-[817px] 2xl:w-[1000px]',
   },
   {
     title: 'idle reverie',
@@ -370,17 +370,17 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           drawerOpen ? 'visible opacity-100' : 'invisible pointer-events-none opacity-0'
         }`}
       >
-        <div className="flex w-full items-center justify-between p-4 lg:px-24 lg:py-6">
+        <div className="flex w-full items-center justify-between p-4 md:px-16 md:py-6 lg:px-24">
           <Link href="/" aria-label="smallcrowdd home" onClick={() => handleInternalNavigation('/', () => setDrawerOpen(false))} className="relative block h-[16px] w-[113px] md:h-[28px] md:w-[198px]">
             <Image src="/assets/work/figma-35830616/wordmark.svg" alt="smallcrowdd." fill priority className="object-fill invert" />
           </Link>
           <MenuIconButton label="Close menu" iconSrc="/assets/figma-home/menu-close.svg" onClick={() => setDrawerOpen(false)} tone="light" />
         </div>
 
-        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 lg:flex-row lg:justify-start lg:gap-3 lg:px-24 lg:py-14">
+        <div className="relative flex min-h-px flex-1 flex-col justify-between gap-8 px-4 py-8 md:flex-row md:justify-start md:gap-10 md:px-16 md:py-12 lg:gap-3 lg:px-24 lg:py-14">
           <nav
             aria-label="Main menu"
-            className="flex w-full flex-col items-start gap-3 font-display text-[56px] leading-[1.1] tracking-[-1.12px] lg:w-auto lg:text-[120px] lg:tracking-[-2.4px]"
+            className="flex w-full flex-col items-start gap-3 font-display text-[56px] leading-[1.1] tracking-[-1.12px] md:w-auto md:gap-2 md:text-[88px] md:tracking-[-1.76px] lg:text-[120px] lg:tracking-[-2.4px]"
             style={displayStyle}
           >
             {menuLinks.map((link) => {
@@ -399,7 +399,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
             })}
           </nav>
 
-          <div className="flex w-[187px] flex-col gap-2 text-[20px] leading-[1.2] tracking-[-0.6px] lg:absolute lg:left-[82.5%] lg:top-8 lg:gap-3 lg:text-2xl lg:tracking-[-0.72px]">
+          <div className="flex w-[187px] flex-col gap-2 text-[20px] leading-[1.2] tracking-[-0.6px] md:absolute md:right-16 md:top-12 lg:left-[82.5%] lg:right-auto lg:top-8 lg:gap-3 lg:text-2xl lg:tracking-[-0.72px]">
             <p className="font-medium text-[#a07204]">Follow us:</p>
             <div className="flex flex-col gap-2 font-bold text-[#131111]">
               {menuSocialLinks.map((link) => (
@@ -411,7 +411,7 @@ function Header({ drawerOpen, setDrawerOpen }: { drawerOpen: boolean; setDrawerO
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] lg:flex-row lg:items-center lg:justify-between lg:px-24 lg:py-6 lg:text-[18px] lg:tracking-[-0.54px]">
+        <div className="flex w-full flex-col gap-2.5 p-4 text-[16px] font-medium leading-[1.33] tracking-[-0.48px] text-[#a07204] md:flex-row md:items-center md:justify-between md:px-16 md:py-6 lg:px-24 lg:text-[18px] lg:tracking-[-0.54px]">
           <p>
             Always open for new <br />
             projects and collaborations
@@ -686,7 +686,7 @@ function AllWork() {
           All Work
         </h2>
       </div>
-      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-6 lg:grid-cols-24">
+      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-24">
         {workItems.map((item) => (
           <WorkCard key={`${item.title}-${item.src}`} item={item} />
         ))}
